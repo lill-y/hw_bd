@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   cassandra1:
     image: cassandra:4.1
@@ -7,32 +5,31 @@ services:
     ports:
       - "9042:9042"
     environment:
-      - CASSANDRA_CLUSTER_NAME=TestCluster
-      - CASSANDRA_SEEDS=cassandra1
-    networks:
-      - cassandra_net
+      - CASSANDRA_CLUSTER_NAME=HomeworkCluster
+      - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
+      - MAX_HEAP_SIZE=512M
+      - HEAP_NEWSIZE=100M
 
   cassandra2:
     image: cassandra:4.1
     container_name: cassandra2
     environment:
-      - CASSANDRA_CLUSTER_NAME=TestCluster
+      - CASSANDRA_CLUSTER_NAME=HomeworkCluster
       - CASSANDRA_SEEDS=cassandra1
+      - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
+      - MAX_HEAP_SIZE=512M
+      - HEAP_NEWSIZE=100M
     depends_on:
       - cassandra1
-    networks:
-      - cassandra_net
 
   cassandra3:
     image: cassandra:4.1
     container_name: cassandra3
     environment:
-      - CASSANDRA_CLUSTER_NAME=TestCluster
+      - CASSANDRA_CLUSTER_NAME=HomeworkCluster
       - CASSANDRA_SEEDS=cassandra1
+      - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
+      - MAX_HEAP_SIZE=512M
+      - HEAP_NEWSIZE=100M
     depends_on:
-      - cassandra1
-    networks:
-      - cassandra_net
-
-networks:
-  cassandra_net:
+      - cassandra2
