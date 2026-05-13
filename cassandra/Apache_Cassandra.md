@@ -3,6 +3,8 @@
 - Создали все с помощью докера
 <img width="566" height="298" alt="image" src="https://github.com/user-attachments/assets/a03c31f7-5d7d-4156-9231-dd0c4045e51c" />
 
+<img width="934" height="679" alt="image" src="https://github.com/user-attachments/assets/b78a641a-68d1-40f9-8336-b505d20e65a2" />
+
 ### Проверяем что кластер жив
 - Ура все ноды работают
 <img width="713" height="137" alt="image" src="https://github.com/user-attachments/assets/d5a5c19a-1ea9-42ae-88a4-d999338621cf" />
